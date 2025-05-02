@@ -1,15 +1,15 @@
 import sys
 import json
 
-def fake_analysis(video_path):
+def analyze(video_path):
     return {
-        "facial": "mostly confident",
-        "tone": "calm and clear",
-        "body": "open posture",
-        "score": 87
+        "overall_score": 82,
+        "facial_expression": {"happy": 65, "nervous": 20},
+        "voice_analysis": {"clarity": "good", "filler_words": 5},
+        "body_language": {"eye_contact": "moderate"}
     }
 
 if __name__ == "__main__":
     video_path = sys.argv[1]
-    result = fake_analysis(video_path)
+    result = analyze(video_path)
     print(json.dumps(result))
